@@ -1,13 +1,10 @@
-import logging
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 
-BOT_TOKEN = "your-telegram-bot-token"
-
-logging.basicConfig(level=logging.INFO)
+BOT_TOKEN = "YOUR_BOT_TOKEN"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    await update.message.reply_text("Привет! Пришли ссылку на сайт с таблицей.")
+    await update.message.reply_text("Привет! Пришли ссылку на сайт, я соберу таблицу.")
 
 def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
