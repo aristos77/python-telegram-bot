@@ -23,9 +23,7 @@ async def show_tracks(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await query.answer()
     tracks = fetch_tracks()
     top_10 = "\n".join(tracks[:10]) or "Не найдено"
-    await query.edit_message_text(text=f"🎵 Топ 10 синглов:
-
-{top_10}")
+    await query.edit_message_text(text=f"🎵 Топ 10 синглов: {top_10}")
 
 async def parse(update: Update, context: ContextTypes.DEFAULT_TYPE):
     tracks = fetch_tracks()
